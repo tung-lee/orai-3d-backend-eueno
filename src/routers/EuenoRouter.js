@@ -4,7 +4,7 @@ const { join } = require("path");
 const { euenoInstance } = require("../utils/euenoFactory");
 
 const fs = require("fs");
-const download = require("../utils/downloadUtils");
+const download = require("../utils/downloadUtils")
 
 const router = Router();
 

@@ -1,4 +1,4 @@
-const EuenoRouter = require("../routers/EuenoRouter");
+const EuenoRouter = require("./EuenoRouter");
 
 function setupRouter(app) {
   app.use("/eueno", EuenoRouter);
