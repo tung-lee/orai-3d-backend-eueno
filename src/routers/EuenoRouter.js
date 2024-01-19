@@ -18,7 +18,8 @@ router.post("/upload-image", async (req, res) => {
   req.setTimeout(500 * 1000);
   res.connection.setTimeout(500 * 1000);
   const { image_url } = req.body;
-  const destination = join(__dirname, "/public");
+  console.log(__dirname)
+  const destination = join(__dirname, "../../public");
   const fileName = Date.now() + ".png";
   const filePath = join(destination, fileName);
   download(image_url, filePath, async function () {
