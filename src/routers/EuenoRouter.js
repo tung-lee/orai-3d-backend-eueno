@@ -2,7 +2,6 @@ const { Router } = require("express");
 const { uploadFile } = require("../controllers/EuenoController");
 const { join } = require("path");
 const { euenoInstance } = require("../utils/euenoFactory");
-const { base64Cat } = require("../constant/index");
 
 const fs = require("fs");
 const download = require("../utils/downloadUtils");
@@ -19,8 +18,6 @@ router.post("/", (req, res) => {
 
 // bot agent call
 router.get("/upload-file", async (req, res) => {
-  // const final_base64 = base64Cat.replace(/^data:image\/png;base64,/, "");
-
   const { base64 } = req.body
 
   const destination = join(__dirname, "../public");
