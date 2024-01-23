@@ -2,6 +2,7 @@ const { Router } = require("express");
 const { uploadFile } = require("../controllers/EuenoController");
 const { join } = require("path");
 const { euenoInstance } = require("../utils/euenoFactory");
+const { base64Cat } = require("../constant/index");
 
 const fs = require("fs");
 const download = require("../utils/downloadUtils");
@@ -16,9 +17,26 @@ router.post("/", (req, res) => {
   res.json(req.body);
 });
 
+// bot agent call
+router.get("/upload-file", async (req, res) => {
+  // const final_base64 = base64Cat.replace(/^data:image\/png;base64,/, "");
+
+  const { base64 } = req.body
+
+  const destination = join(__dirname, "../public");
+  const fileName = Date.now() + ".png";
+  const filePath = join(destination, fileName);
+  fs.writeFile(filePath, base64, { encoding: "base64" }, function (err) {
+    console.log(err);
+  });
+
+  res.json({ message: "Hello World", url: `http://192.168.102.25:8888/${fileName}` });
+});
+
+// client
 router.post("/upload-image", async (req, res) => {
-  req.setTimeout(500 * 1000);
-  res.connection.setTimeout(500 * 1000);
+  req.setTimeout(1000 * 1000);
+  res.connection.setTimeout(1000 * 1000);
   const { image_url } = req.body;
   console.log(__dirname);
   const destination = join(__dirname, "../public");
