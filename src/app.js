@@ -1,12 +1,10 @@
 const express = require("express");
-const dotenv = require("dotenv");
 const path = require("path");
 
 const config = require("./config/appConfig");
 const setupRouter = require("./routers");
 
 const app = express();
-dotenv.config({ path: ".env" });
 
 config(app);
 

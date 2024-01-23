@@ -2,6 +2,8 @@ const Eueno = require("@eueno/lib-node");
 const fs = require("fs");
 const axios = require("axios");
 const ethers = require("ethers");
+const { EUENO_PROJECT_KEY, MMEMOMIC } = require("../config/variables.config");
+
 const END_POINT = "https://v2-developers.eueno.io";
 
 class OraichainEueno {
@@ -147,10 +149,12 @@ class OraichainEueno {
 // - privateKey wallet
 // - project key
 const euenoInstance = new OraichainEueno({
-  projectKey:
-    "b9554a39988be32810e2d19ce9ca4355595f75bd1a11a78a4a865053b3ba835f",
-  mmemomic:
-    "normal disorder endorse legal kiwi mask behind grunt inherit license battle garment",
+  projectKey: EUENO_PROJECT_KEY
+    ? EUENO_PROJECT_KEY
+    : "3da4bc5a76119ee592db8fdd126692edc6b140aa4e6da5690b8192d49e92c4a6",
+  mmemomic: MMEMOMIC
+    ? MMEMOMIC
+    : "normal disorder endorse legal kiwi mask behind grunt inherit license battle garment",
 });
 
 module.exports = {
