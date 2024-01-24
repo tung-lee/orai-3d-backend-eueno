@@ -151,7 +151,7 @@ class OraichainEueno {
 const euenoInstance = new OraichainEueno({
   projectKey: EUENO_PROJECT_KEY
     ? EUENO_PROJECT_KEY
-    : "3da4bc5a76119ee592db8fdd126692edc6b140aa4e6da5690b8192d49e92c4a6",
+    : "8f437348733cb36a573746bfb78b305be7d248b260ed9c811c9cc65c4282ad35",
   mmemomic: MMEMOMIC
     ? MMEMOMIC
     : "normal disorder endorse legal kiwi mask behind grunt inherit license battle garment",
